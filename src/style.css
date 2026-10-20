@@ -212,9 +212,21 @@ h1 em {
   position: absolute;
   bottom: 26px;
   right: 6%;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+.swatch-row {
   display: flex;
   align-items: center;
   gap: 17px;
+}
+.swatch-row .micro {
+  min-width: 76px;
+}
+.swatch-row .swatches {
+  min-width: 76px;
 }
 .micro {
   color: #9ba58d;
@@ -391,7 +403,7 @@ form .primary {
     bottom: 25px;
   }
   .scene-caption {
-    bottom: 80px;
+    bottom: 115px;
   }
   .details {
     flex-wrap: wrap;
@@ -442,7 +454,7 @@ form .primary {
     gap: 14px;
   }
   .scene-caption {
-    bottom: 80px;
+    bottom: 115px;
   }
   .spec strong {
     font-size: 32px;

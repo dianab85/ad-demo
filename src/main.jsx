@@ -21,10 +21,28 @@ const finishes = [
   { name: 'Ember copper', color: '#bc7750', light: '#ecc6a1', dark: '#70402d' },
 ];
 
+const wheelFinishes = [
+  {
+    name: 'Gray',
+    color: '#333333',
+    highlight: '#b2bab2',
+    midtone: '#69756b',
+    edge: '#8a9589',
+  },
+  {
+    name: 'Bronze',
+    color: '#a57545',
+    highlight: '#e0bc8b',
+    midtone: '#88603a',
+    edge: '#bd925f',
+  },
+];
+
 function App() {
   const root = useRef(null);
   const timeline = useRef(null);
   const [selected, setSelected] = useState(0);
+  const [selectedWheel, setSelectedWheel] = useState(0);
   const [playing, setPlaying] = useState(true);
   const [open, setOpen] = useState(false);
   useLayoutEffect(() => {
@@ -116,27 +134,51 @@ function App() {
           GT
         </div>
         <div className="car-scene">
-          <Car finish={finishes[selected]} />
+          <Car
+            finish={finishes[selected]}
+            wheelFinish={wheelFinishes[selectedWheel]}
+          />
         </div>
         <div className="vertical-label reveal">DESIGNED TO MOVE YOU</div>
         <div className="scene-caption bottom-reveal">
           <span className="small-cross">+</span> A NEW PERSPECTIVE ON ELECTRIC
         </div>
         <div className="finish-picker bottom-reveal">
-          <span className="micro">MAKE IT YOURS</span>
-          <div className="swatches">
-            {finishes.map((f, i) => (
-              <button
-                key={f.name}
-                style={{ '--swatch': f.color }}
-                className={i === selected ? 'active' : ''}
-                onClick={() => changeFinish(i)}
-                aria-label={f.name}
-                aria-pressed={i === selected}
-              />
-            ))}
+          <div className="swatch-row" role="group" aria-label="Body paint">
+            <span className="micro">BODY PAINT</span>
+            <div className="swatches">
+              {finishes.map((f, i) => (
+                <button
+                  key={f.name}
+                  style={{ '--swatch': f.color }}
+                  className={i === selected ? 'active' : ''}
+                  onClick={() => changeFinish(i)}
+                  aria-label={f.name}
+                  aria-pressed={i === selected}
+                />
+              ))}
+            </div>
+            <span className="finish-name">{finishes[selected].name}</span>
           </div>
-          <span className="finish-name">{finishes[selected].name}</span>
+          <div className="swatch-row" role="group" aria-label="Wheel color">
+            <span className="micro">WHEELS</span>
+            <div className="swatches">
+              {wheelFinishes.map((finish, i) => (
+                <button
+                  key={finish.name}
+                  type="button"
+                  style={{ '--swatch': finish.color }}
+                  className={i === selectedWheel ? 'active' : ''}
+                  onClick={() => setSelectedWheel(i)}
+                  aria-label={`${finish.name} wheels`}
+                  aria-pressed={i === selectedWheel}
+                />
+              ))}
+            </div>
+            <span className="finish-name">
+              {wheelFinishes[selectedWheel].name}
+            </span>
+          </div>
         </div>
       </section>
       <section

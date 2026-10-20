@@ -1,12 +1,12 @@
 import React from 'react';
 
-export default function Car({ finish }) {
+export default function Car({ finish, wheelFinish }) {
   return (
     <svg
       className="car"
       viewBox="0 0 1100 430"
       role="img"
-      aria-label={`AERA GT concept car in ${finish.name}`}
+      aria-label={`AERA GT concept car in ${finish.name} with ${wheelFinish.name.toLowerCase()} wheels`}
     >
       <defs>
         <linearGradient id="body" x1="0" y1="0" x2="0.15" y2="1">
@@ -21,9 +21,9 @@ export default function Car({ finish }) {
           <stop offset="1" stopColor="#101916" />
         </linearGradient>
         <radialGradient id="rim">
-          <stop stopColor="#b2bab2" />
+          <stop stopColor={wheelFinish.highlight} />
           <stop offset=".28" stopColor="#26312c" />
-          <stop offset=".76" stopColor="#69756b" />
+          <stop offset=".76" stopColor={wheelFinish.midtone} />
           <stop offset=".81" stopColor="#171d19" />
           <stop offset="1" stopColor="#090d0b" />
         </radialGradient>
@@ -88,18 +88,24 @@ export default function Car({ finish }) {
             cy="318"
             r="49"
             fill="url(#rim)"
-            stroke="#8a9589"
+            stroke={wheelFinish.edge}
             strokeWidth="2"
           />
           {Array.from({ length: 10 }, (_, i) => (
             <path
               key={i}
               d={`M${x - 5} 307l-9-33 13-2 8 35Z`}
-              fill="#a5afa3"
+              fill={wheelFinish.color}
               transform={`rotate(${i * 36} ${x} 318)`}
             />
           ))}
-          <circle cx={x} cy="318" r="12" fill="#26332a" stroke="#a4b09f" />
+          <circle
+            cx={x}
+            cy="318"
+            r="12"
+            fill="#26332a"
+            stroke={wheelFinish.highlight}
+          />
         </g>
       ))}
       <path
