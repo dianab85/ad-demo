@@ -39,7 +39,7 @@ function App() {
           opacity: 0,
           duration: 0.9,
           stagger: 0.12,
-          ease: 'power3.out',
+          ease: 'expo.out',
         })
         .from(
           '.car',
@@ -47,13 +47,13 @@ function App() {
             x: reduced ? 0 : 220,
             opacity: 0,
             duration: 1.6,
-            ease: 'power3.out',
+            ease: 'expo.out',
           },
           '-=.9',
         )
         .from(
           '.wheel',
-          { rotation: reduced ? 0 : 150, duration: 1.6, ease: 'power3.out' },
+          { rotation: reduced ? 0 : 150, duration: 1.6, ease: 'expo.out' },
           '<',
         )
         .from(
