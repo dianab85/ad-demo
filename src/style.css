@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #ecede3;
+  background: #171b17;
+  font-synthesis: none;
+  font-weight: 400;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  font: inherit;
+  cursor: pointer;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #d4ed9b;
+  outline-offset: 6px;
+}
+button {
+  color: inherit;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+main {
+  max-width: 1800px;
+  margin: auto;
+  overflow: hidden;
+}
+header {
+  height: 112px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffffff17;
+}
+.logo {
+  font-size: 27px;
+  letter-spacing: 7px;
+  font-weight: 500;
+}
+.logo span {
+  display: block;
+  font-size: 7px;
+  letter-spacing: 2.3px;
+  margin-top: 8px;
+}
+.edition {
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+.edition span {
+  margin-left: 45px;
+  color: #8e978b;
+}
+.nav-cta {
+  background: none;
+  border: 1px solid #66715b;
+  border-radius: 30px;
+  padding: 12px 20px;
+  font-size: 12px;
+}
+.nav-cta span {
+  margin-left: 25px;
+}
+.stage {
+  position: relative;
+  height: 660px;
+  isolation: isolate;
+  background: radial-gradient(ellipse at 72% 59%, #505b4130, transparent 65%);
+}
+.hero-copy {
+  position: relative;
+  z-index: 3;
+  padding: 64px 0 0 6%;
+  pointer-events: none;
+}
+.hero-copy button {
+  pointer-events: auto;
+}
+.eyebrow,
+.micro {
+  font-size: 9px;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #c8d8af;
+}
+.eyebrow > span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #d5ecac;
+}
+h1 {
+  font-family: Manrope, sans-serif;
+  font-size: clamp(52px, 5.4vw, 86px);
+  font-weight: 500;
+  letter-spacing: -4px;
+  line-height: 1.08;
+  margin: 25px 0 22px;
+}
+h1 em {
+  font-style: normal;
+  color: #d3e6ad;
+}
+.intro {
+  font-size: 13px;
+  line-height: 1.8;
+  color: #a9b0a1;
+}
+.primary {
+  border: 0;
+  border-radius: 3px;
+  background: #d3e6ad;
+  color: #202b1d;
+  font-size: 11px;
+  padding: 17px 22px;
+  margin-top: 18px;
+  font-weight: 600;
+}
+.primary span {
+  margin-left: 30px;
+}
+.background-type {
+  position: absolute;
+  z-index: -1;
+  top: 2px;
+  right: 6%;
+  font-family: Manrope, sans-serif;
+  font-size: 360px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -35px;
+  color: #b8c8a30a;
+}
+.car-scene {
+  position: absolute;
+  top: 170px;
+  left: 27%;
+  width: 76%;
+  z-index: 2;
+}
+.car {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 12px 20px #060d0660);
+}
+.horizon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 72%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #a2b68a25, transparent);
+  box-shadow: 0 30px 100px 30px #a1b68d06;
+}
+.ambient {
+  position: absolute;
+  width: 600px;
+  height: 250px;
+  right: 4%;
+  top: 35%;
+  border-radius: 50%;
+  background: #b9ce7c10;
+  filter: blur(65px);
+  z-index: -1;
+}
+.vertical-label {
+  position: absolute;
+  right: 2.3%;
+  top: 95px;
+  writing-mode: vertical-rl;
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: #8c9881;
+}
+.scene-caption {
+  position: absolute;
+  bottom: 33px;
+  left: 6%;
+  font-size: 8px;
+  letter-spacing: 1.8px;
+  color: #909d83;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.small-cross {
+  font-size: 25px;
+  font-weight: 400;
+}
+.finish-picker {
+  position: absolute;
+  bottom: 26px;
+  right: 6%;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+}
+.micro {
+  color: #9ba58d;
+}
+.swatches {
+  display: flex;
+  gap: 11px;
+}
+.swatches button {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--swatch);
+  border: 2px solid #171b17;
+  outline: 1px solid transparent;
+}
+.swatches button.active {
+  outline-color: #d2e1bd;
+}
+.finish-name {
+  font-size: 10px;
+  min-width: 85px;
+  color: #b5beaa;
+}
+.details {
+  margin: 0 5%;
+  padding: 32px 1%;
+  border-top: 1px solid #ffffff20;
+  border-bottom: 1px solid #ffffff20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+.detail-intro p {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 13px 0 0;
+}
+.spec {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.spec strong {
+  font-family: Manrope, sans-serif;
+  font-weight: 400;
+  font-size: 42px;
+  letter-spacing: -1.5px;
+}
+.spec strong span {
+  font-size: 17px;
+  letter-spacing: 0;
+  margin-left: 5px;
+  color: #b9c7aa;
+}
+.spec > span {
+  font-size: 8px;
+  letter-spacing: 2px;
+  color: #97a18c;
+}
+.replay {
+  background: none;
+  border: 0;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #c0ccb3;
+}
+.replay > span {
+  font-size: 27px;
+}
+footer {
+  padding: 25px 6%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: #747f6b;
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #000a;
+  backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  z-index: 20;
+  padding: 20px;
+}
+dialog {
+  position: relative;
+  margin: 0;
+  width: 450px;
+  max-width: 100%;
+  background: #232c21;
+  color: #ecede3;
+  border: 1px solid #64744f;
+  border-radius: 8px;
+  padding: 40px;
+}
+dialog h2 {
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -1px;
+}
+dialog p {
+  color: #bbc4b0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.close {
+  position: absolute;
+  right: 14px;
+  top: 10px;
+  background: none;
+  border: 0;
+  font-size: 26px;
+}
+form label {
+  display: block;
+  font-size: 12px;
+  margin-top: 25px;
+}
+form input {
+  display: block;
+  width: 100%;
+  background: #171e15;
+  border: 1px solid #5c6d4d;
+  border-radius: 3px;
+  padding: 13px;
+  color: white;
+  margin-top: 8px;
+}
+form .primary {
+  width: 100%;
+}
+@media (min-width: 1500px) {
+  .stage {
+    height: 740px;
+  }
+  .car-scene {
+    top: 155px;
+  }
+}
+@media (max-width: 900px) {
+  header {
+    height: 90px;
+  }
+  .edition {
+    display: none;
+  }
+  .stage {
+    height: 750px;
+  }
+  .hero-copy {
+    padding-top: 40px;
+  }
+  h1 {
+    font-size: 65px;
+  }
+  .car-scene {
+    top: 320px;
+    left: 0;
+    width: 105%;
+  }
+  .background-type {
+    top: 260px;
+    font-size: 250px;
+  }
+  .finish-picker {
+    bottom: 25px;
+  }
+  .scene-caption {
+    bottom: 80px;
+  }
+  .details {
+    flex-wrap: wrap;
+  }
+  .detail-intro {
+    width: 100%;
+  }
+  .replay {
+    margin-left: auto;
+  }
+  footer {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 500px) {
+  .logo {
+    font-size: 22px;
+  }
+  .nav-cta {
+    padding: 10px 14px;
+  }
+  .stage {
+    height: 660px;
+  }
+  h1 {
+    font-size: 51px;
+    letter-spacing: -2.5px;
+  }
+  .hero-copy {
+    padding-top: 30px;
+  }
+  .car-scene {
+    top: 330px;
+    width: 120%;
+    left: -10%;
+  }
+  .background-type {
+    font-size: 210px;
+    right: 12%;
+    top: 300px;
+  }
+  .vertical-label {
+    display: none;
+  }
+  .finish-picker {
+    left: 6%;
+    right: auto;
+    gap: 14px;
+  }
+  .scene-caption {
+    bottom: 80px;
+  }
+  .spec strong {
+    font-size: 32px;
+  }
+  .spec > span {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  .details {
+    gap: 20px;
+  }
+  .replay {
+    width: 100%;
+    margin-top: 10px;
+  }
+  footer {
+    line-height: 1.7;
+  }
+  footer span:nth-child(2) {
+    order: 3;
+    width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}
